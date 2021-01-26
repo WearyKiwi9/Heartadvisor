@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>UIAppFonts</key>
+    <array>
+        <string>FontsFree-Net-SFProDisplay-Bold.ttf</string>
+        <string>FontsFree-Net-SFProDisplay-Regular.ttf</string>
+        <string>FontsFree-Net-SFProDisplay-Thin.ttf</string>
+        <string>FontsFree-Net-SFProDisplay-Medium-1.ttf</string>
+    </array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 	<key>CFBundleDevelopmentRegion</key>

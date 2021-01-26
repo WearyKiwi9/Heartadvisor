@@ -9,10 +9,11 @@ import Foundation
 
 struct Constants {
     //Color variables
-    static let syncMainColor = "#264b77";
-    static let syncYellowColor = "#b67929";
-    static let syncGrayColor = "#a3acb1";
-    static let syncDarkBlueColor = "#00243f";
+    static let heartadvisor_black = "#090C08";
+    static let heartadvisor_pink = "#C98686";
+    static let heartadvisor_gray = "#5D737E";
+    static let heartadvisor_white = "#FFF4EC";
+    static let heartadvisor_red = "#840032";
 
     // Font variables
     // Typically for headers

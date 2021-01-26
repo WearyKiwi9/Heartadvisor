@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6oS-XR-oqX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.51764705882352935" green="0.0" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="5It-Bs-G9V"/>
                 </viewController>
@@ -46,15 +46,6 @@
                     <view key="view" contentMode="scaleToFill" id="vxS-mA-hfy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sleep Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERc-SP-jIZ">
-                                <rect key="frame" x="141" y="382" width="118" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="v6i-BA-8Hw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -71,15 +62,6 @@
                     <view key="view" contentMode="scaleToFill" id="21T-wN-2yh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55H-4q-7FO">
-                                <rect key="frame" x="155" y="396" width="104" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RJe-OW-6z8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -96,15 +78,6 @@
                     <view key="view" contentMode="scaleToFill" id="9g1-LP-g3H">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercise Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpM-KF-d1L">
-                                <rect key="frame" x="99" y="500" width="122" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="EU2-F0-Lkd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -121,15 +94,6 @@
                     <view key="view" contentMode="scaleToFill" id="6pE-pR-cbE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Diet Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sy-hA-tun">
-                                <rect key="frame" x="148" y="495" width="118" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="J60-pF-VCM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -146,15 +110,6 @@
                     <view key="view" contentMode="scaleToFill" id="gQm-lG-W6x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meditation/Mental Health Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghc-WZ-Xhf">
-                                <rect key="frame" x="125" y="313" width="249" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3Rb-IW-5tg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -208,7 +163,7 @@
         <scene sceneID="5MP-A3-aV7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wk9-WC-HDn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sleep Tracking" id="LBf-41-PQR"/>
+                    <tabBarItem key="tabBarItem" title="Sleep Tracking" image="sleep" selectedImage="sleep" id="LBf-41-PQR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wrq-vU-jxR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -246,7 +201,7 @@
         <scene sceneID="XLZ-X4-EpD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YqY-kO-KmA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Exercise" id="KBZ-FM-9Z1"/>
+                    <tabBarItem key="tabBarItem" title="Exercise" image="exercise" selectedImage="exercise" id="KBZ-FM-9Z1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AyU-3J-y2Z">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -265,7 +220,7 @@
         <scene sceneID="dOh-Ib-0xq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6pN-Ob-dlv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Diet" id="wRb-ih-z2T"/>
+                    <tabBarItem key="tabBarItem" title="Diet" image="diet" selectedImage="diet" id="wRb-ih-z2T"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ypQ-m9-Bcx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -303,8 +258,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="diet" width="25" height="25"/>
+        <image name="exercise" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
         <image name="meditation" width="25" height="25"/>
+        <image name="sleep" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
