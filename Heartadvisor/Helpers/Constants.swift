@@ -9,7 +9,7 @@ import Foundation
 
 struct Constants {
     //Color variables
-    static let heartadvisor_black = "#090C08";
+    static let heartadvisor_black = "#011627";
     static let heartadvisor_pink = "#C98686";
     static let heartadvisor_gray = "#5D737E";
     static let heartadvisor_white = "#FFF4EC";
