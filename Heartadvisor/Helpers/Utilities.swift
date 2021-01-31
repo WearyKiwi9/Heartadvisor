@@ -12,7 +12,7 @@ import UIKit
 
 class Utilities {
     // Text field stylings
-    static func styleTextField(_ textfield:UITextField) {
+    static func styleTextField(_ textfield:UITextField, _ color: String = "white") {
         // Because constraints-based views are still in the process of beign laidout
         // at the call of didLayoutSubviews(), this function finishes the layout
         // before using .frame
@@ -21,16 +21,20 @@ class Utilities {
         
         textfield.heightAnchor.constraint(equalToConstant:50).isActive = true
         
+        //problematic, it moves also delete button inside textfield
+        textfield.layer.sublayerTransform = CATransform3DMakeTranslation(8, 0, 0);
+
         // Set up border on text field
-        //textfield.borderStyle.
+        textfield.borderStyle = .none
         textfield.tintColor = .white
         textfield.textColor = .white
         
         textfield.layer.cornerRadius = textfield.frame.height/2
         textfield.layer.borderWidth = 2.0
         textfield.layer.borderColor = UIColor.white.cgColor
-        textfield.attributedPlaceholder = NSAttributedString(string: "placeholder text", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-
+        if(color == "black") {
+            textfield.layer.borderColor = UIColor.black.cgColor
+        }
 
         textfield.font = UIFont(name: Constants.smallFont, size: CGFloat(Constants.smallFontSize))
     }
@@ -53,6 +57,17 @@ class Utilities {
         button.imageView?.contentMode = . scaleAspectFit
         
         // Handles resizing button font size (with smaller screens)
+        button.titleLabel?.numberOfLines = 1;
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.minimumScaleFactor = 0.5
+    }
+    
+    // Link button (hyperlink)
+    static func styleLinkButton(_ button:UIButton) {
+        button.titleLabel?.font = UIFont(name: Constants.largeFont, size: CGFloat(Constants.largeFontSize))
+        button.tintColor = UIColor(hexString: Constants.heartadvisor_red)
+        button.contentVerticalAlignment = .fill
+
         button.titleLabel?.numberOfLines = 1;
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.titleLabel?.minimumScaleFactor = 0.5

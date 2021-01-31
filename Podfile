@@ -8,5 +8,6 @@ target 'Heartadvisor' do
   # Pods for Heartadvisor
 
   pod 'SideMenu'
+  pod 'PanModal' 
 
 end
