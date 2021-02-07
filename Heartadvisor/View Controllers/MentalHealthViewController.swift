@@ -114,7 +114,6 @@ extension MentalHealthViewController: UICollectionViewDelegate, UICollectionView
             imageString = energyImgs[indexPath.row]
         }
         
-        //cell?.img.image = UIImage(named: "menu")
         let storage = Storage.storage()
         let storageRef = storage.reference()
         let imageRef = storageRef.child(imageString)

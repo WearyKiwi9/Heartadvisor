@@ -212,10 +212,10 @@
             </objects>
             <point key="canvasLocation" x="1551" y="2192"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="ZDk-NP-TW5">
             <objects>
-                <tabBarController storyboardIdentifier="HomeVC" id="XRj-Xa-ICk" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeVC" id="XRj-Xa-ICk" customClass="TabBarViewController" customModule="Heartadvisor" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ca7-RF-5Zo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -416,7 +416,7 @@
         <!--View Controller-->
         <scene sceneID="VB8-Ka-UHh">
             <objects>
-                <viewController storyboardIdentifier="template" id="Olg-Bh-JCH" customClass="ViewController" customModule="Heartadvisor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Olg-Bh-JCH" customClass="ViewController" customModule="Heartadvisor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WYe-SV-mwO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

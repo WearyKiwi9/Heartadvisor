@@ -10,6 +10,7 @@
 		407C04782CAE62931EFEE192 /* Pods_Heartadvisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81BA7A6A10E868342971875 /* Pods_Heartadvisor.framework */; };
 		E49E7CDF25C625EC0040DB75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49E7CDE25C625EC0040DB75 /* Main.storyboard */; };
 		E49E7CED25C62CC70040DB75 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E7CEC25C62CC70040DB75 /* ForgotPasswordViewController.swift */; };
+		E4B0D73C25D0A8270081B905 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B0D73B25D0A8270081B905 /* TabBarViewController.swift */; };
 		E4C609FD25C0958400B89AE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C609FC25C0958400B89AE5 /* AppDelegate.swift */; };
 		E4C609FF25C0958400B89AE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C609FE25C0958400B89AE5 /* SceneDelegate.swift */; };
 		E4C60A0625C0958900B89AE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C60A0525C0958900B89AE5 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		C81BA7A6A10E868342971875 /* Pods_Heartadvisor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartadvisor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49E7CDE25C625EC0040DB75 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E49E7CEC25C62CC70040DB75 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		E4B0D73B25D0A8270081B905 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E4C609F925C0958400B89AE5 /* Heartadvisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heartadvisor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C609FC25C0958400B89AE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4C609FE25C0958400B89AE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				E4C60A0725C0958900B89AE5 /* LaunchScreen.storyboard */,
 				E4C60A0A25C0958900B89AE5 /* Info.plist */,
 				E4F3A04425CD2E58002EEEED /* GoogleService-Info.plist */,
+				E4B0D73B25D0A8270081B905 /* TabBarViewController.swift */,
 			);
 			path = Heartadvisor;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				E4C609FD25C0958400B89AE5 /* AppDelegate.swift in Sources */,
 				E49E7CED25C62CC70040DB75 /* ForgotPasswordViewController.swift in Sources */,
 				E4C60A4625C098DC00B89AE5 /* MentalHealthViewController.swift in Sources */,
+				E4B0D73C25D0A8270081B905 /* TabBarViewController.swift in Sources */,
 				E4C609FF25C0958400B89AE5 /* SceneDelegate.swift in Sources */,
 				E4C60A4125C098CB00B89AE5 /* HomeViewController.swift in Sources */,
 			);
