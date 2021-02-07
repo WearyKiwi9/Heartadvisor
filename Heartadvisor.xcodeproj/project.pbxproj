@@ -29,6 +29,7 @@
 		E4C60A7E25C0C1F400B89AE5 /* FontsFree-Net-SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4C60A7A25C0C1E700B89AE5 /* FontsFree-Net-SFProDisplay-Regular.ttf */; };
 		E4C60A7F25C0C1F400B89AE5 /* FontsFree-Net-SFProDisplay-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4C60A7825C0C1E700B89AE5 /* FontsFree-Net-SFProDisplay-Thin.ttf */; };
 		E4C60A8625C0D2F700B89AE5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C60A8525C0D2F700B89AE5 /* Utilities.swift */; };
+		E4F3A04525CD2E58002EEEED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4F3A04425CD2E58002EEEED /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		E4C60A7A25C0C1E700B89AE5 /* FontsFree-Net-SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		E4C60A7B25C0C1E800B89AE5 /* FontsFree-Net-SFProDisplay-Medium-1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProDisplay-Medium-1.ttf"; sourceTree = "<group>"; };
 		E4C60A8525C0D2F700B89AE5 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		E4F3A04425CD2E58002EEEED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,15 +160,16 @@
 		E4C609FB25C0958400B89AE5 /* Heartadvisor */ = {
 			isa = PBXGroup;
 			children = (
+				E4C609FC25C0958400B89AE5 /* AppDelegate.swift */,
 				E4C60A8325C0D2D900B89AE5 /* Font */,
 				E4C60A8425C0D2E200B89AE5 /* Helpers */,
 				E4C60A3A25C0989E00B89AE5 /* View Controllers */,
-				E4C609FC25C0958400B89AE5 /* AppDelegate.swift */,
 				E4C609FE25C0958400B89AE5 /* SceneDelegate.swift */,
 				E49E7CDE25C625EC0040DB75 /* Main.storyboard */,
 				E4C60A0525C0958900B89AE5 /* Assets.xcassets */,
 				E4C60A0725C0958900B89AE5 /* LaunchScreen.storyboard */,
 				E4C60A0A25C0958900B89AE5 /* Info.plist */,
+				E4F3A04425CD2E58002EEEED /* GoogleService-Info.plist */,
 			);
 			path = Heartadvisor;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4C60A7C25C0C1F400B89AE5 /* FontsFree-Net-SFProDisplay-Bold.ttf in Resources */,
+				E4F3A04525CD2E58002EEEED /* GoogleService-Info.plist in Resources */,
 				E4C60A7D25C0C1F400B89AE5 /* FontsFree-Net-SFProDisplay-Medium-1.ttf in Resources */,
 				E4C60A7E25C0C1F400B89AE5 /* FontsFree-Net-SFProDisplay-Regular.ttf in Resources */,
 				E49E7CDF25C625EC0040DB75 /* Main.storyboard in Resources */,

@@ -7,6 +7,9 @@
 
 import UIKit
 import PanModal
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
@@ -44,7 +47,7 @@ class LoginViewController: UIViewController {
         passwordField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         firstNameField.attributedPlaceholder = NSAttributedString(string: "First Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         lastNameField.attributedPlaceholder = NSAttributedString(string: "Last Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-
+        
         Utilities.styleLinkButton(switchBtn)
         Utilities.styleLinkButton(forgotPasswordBtn)
         
@@ -92,5 +95,60 @@ class LoginViewController: UIViewController {
         self.presentPanModal(vc)
     }
     
-    
+    @IBAction func userSign(_ sender: Any) {
+        // Make sure that the user entered an email and password
+        if(emailField.text == "") {
+            self.showError(message: "Please enter an email")
+            return
+        }
+        if(passwordField.text == "") {
+            self.showError(message: "Please enter a password")
+            return
+        }
+        if(firstNameField.text == "" && type == "Sign Up") {
+            self.showError(message: "Please enter a first name")
+            return
+        }
+        if(lastNameField.text == "" && type == "Sign Up") {
+            self.showError(message: "Please enter a last name")
+            return
+        }
+        
+        if(type == "Sign Up") {
+            Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) { authResult, error in
+                if(error != nil) {
+                    self.showError(message: error?.localizedDescription ?? "The system ran into an unexpected error. Please try again later.")
+                    return
+                }
+                let db = Firestore.firestore()
+                
+                db.collection("users").document(authResult!.user.uid).setData([
+                    "first_name":self.firstNameField.text!,
+                    "last_name":self.lastNameField.text!,
+                    "uid":authResult!.user.uid,
+                    "email":self.emailField.text!
+                ], merge: true){ (error) in
+                    //error
+                }
+                let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
+                self.view.window?.rootViewController = homeViewController
+                self.view.window?.makeKeyAndVisible()
+            }
+        }
+        else {
+            Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!) { [weak self] authResult, error in
+                //guard let strongSelf = self else { return }
+                if(error != nil) {
+                    self?.showError(message: error?.localizedDescription ?? "The system ran into an unexpected error. Please try again later.")
+                    return
+                }
+
+                let homeViewController = self?.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
+                self?.view.window?.rootViewController = homeViewController
+                self?.view.window?.makeKeyAndVisible()
+        }
+    }
+}
+
+
 }
