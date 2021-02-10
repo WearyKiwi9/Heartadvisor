@@ -26,7 +26,9 @@ class Utilities {
 
         // Set up border on text field
         textfield.borderStyle = .none
-        textfield.tintColor = .white
+        if(color == "white") {
+            textfield.tintColor = .white
+        }
         textfield.textColor = .white
         
         textfield.layer.cornerRadius = textfield.frame.height/2
@@ -34,6 +36,7 @@ class Utilities {
         textfield.layer.borderColor = UIColor.white.cgColor
         if(color == "black") {
             textfield.layer.borderColor = UIColor.black.cgColor
+            textfield.textColor = .black
         }
 
         textfield.font = UIFont(name: Constants.smallFont, size: CGFloat(Constants.smallFontSize))

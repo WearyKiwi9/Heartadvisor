@@ -30,13 +30,13 @@ class ForgotPasswordViewController: UIViewController {
     
     @IBAction func onForgotPassword(_ sender: Any) {
         if(emailField.text == "") {
-            let alert = UIAlertController(title: "HeartAdvisor", message: "Please enter an email", preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
+            showError(message: "Please enter an email")
             return
         }
         Auth.auth().sendPasswordReset(withEmail: emailField.text!) { error in
-          // ...
+            self.showError(message: error.debugDescription)
         }
+        showError(message: "A password recovery email has been sent to \(emailField.text!)")
     }
     
 }

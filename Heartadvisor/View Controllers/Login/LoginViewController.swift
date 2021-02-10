@@ -43,6 +43,8 @@ class LoginViewController: UIViewController {
         Utilities.styleTextField(firstNameField)
         Utilities.styleTextField(lastNameField)
         
+        passwordField.isSecureTextEntry = true
+        
         emailField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         passwordField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         firstNameField.attributedPlaceholder = NSAttributedString(string: "First Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
@@ -120,16 +122,18 @@ class LoginViewController: UIViewController {
                     self.showError(message: error?.localizedDescription ?? "The system ran into an unexpected error. Please try again later.")
                     return
                 }
-                let db = Firestore.firestore()
-                
+                let db
+                    = Firestore.firestore()
                 db.collection("users").document(authResult!.user.uid).setData([
                     "first_name":self.firstNameField.text!,
                     "last_name":self.lastNameField.text!,
                     "uid":authResult!.user.uid,
                     "email":self.emailField.text!
                 ], merge: true){ (error) in
-                    //error
+                    self.showError(message: error?.localizedDescription ?? "The system ran into an unexpected error. Please try again later.")
+                    print("here2")
                 }
+
                 let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC")
                 self.view.window?.rootViewController = homeViewController
                 self.view.window?.makeKeyAndVisible()
