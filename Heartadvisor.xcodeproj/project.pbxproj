@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08C3064E25D5A3B000D9C829 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C3064D25D5A3B000D9C829 /* GoogleService-Info.plist */; };
 		407C04782CAE62931EFEE192 /* Pods_Heartadvisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81BA7A6A10E868342971875 /* Pods_Heartadvisor.framework */; };
 		E49E7CDF25C625EC0040DB75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49E7CDE25C625EC0040DB75 /* Main.storyboard */; };
 		E49E7CED25C62CC70040DB75 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E7CEC25C62CC70040DB75 /* ForgotPasswordViewController.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08C3064D25D5A3B000D9C829 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6B34C10496B5498021D37E78 /* Pods-Heartadvisor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartadvisor.debug.xcconfig"; path = "Target Support Files/Pods-Heartadvisor/Pods-Heartadvisor.debug.xcconfig"; sourceTree = "<group>"; };
 		70BA94F7D8F6984D433DB39A /* Pods-Heartadvisor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartadvisor.release.xcconfig"; path = "Target Support Files/Pods-Heartadvisor/Pods-Heartadvisor.release.xcconfig"; sourceTree = "<group>"; };
 		C81BA7A6A10E868342971875 /* Pods_Heartadvisor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartadvisor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 		E4C609FB25C0958400B89AE5 /* Heartadvisor */ = {
 			isa = PBXGroup;
 			children = (
+				08C3064D25D5A3B000D9C829 /* GoogleService-Info.plist */,
 				E4C60A8325C0D2D900B89AE5 /* Font */,
 				E4C60A8425C0D2E200B89AE5 /* Helpers */,
 				E4C60A3A25C0989E00B89AE5 /* View Controllers */,
@@ -329,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4C60A7C25C0C1F400B89AE5 /* FontsFree-Net-SFProDisplay-Bold.ttf in Resources */,
+				08C3064E25D5A3B000D9C829 /* GoogleService-Info.plist in Resources */,
 				E4C60A7D25C0C1F400B89AE5 /* FontsFree-Net-SFProDisplay-Medium-1.ttf in Resources */,
 				E4C60A7E25C0C1F400B89AE5 /* FontsFree-Net-SFProDisplay-Regular.ttf in Resources */,
 				E49E7CDF25C625EC0040DB75 /* Main.storyboard in Resources */,
