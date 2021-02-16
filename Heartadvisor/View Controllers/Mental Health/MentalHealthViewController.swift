@@ -35,10 +35,14 @@ class MentalHealthViewController: UIViewController {
     let flowTitles = ["Above & Beyond","Getting into the Flow","Get Into the Flow and Focus", "Guided Visual Meditation", "Arrive"]
     let energyTitles = ["Healing Light", "Soul Energy Alignment","Experience the Pure Loving Energy of the Universe", "Energy Healing", "Reiki Meditation"]
     
-    let relaxImgs = ["mentalHealth/Relax/relax_img_1.jpg", "mentalHealth/Relax/relax_img_2.jpg", "mentalHealth/Relax/relax_img_3.jpg", "mentalHealth/Relax/relax_img_4.jpg", "mentalHealth/Relax/relax_img_5.jpg"]
+    let relaxImgs = ["mentalHealth/Relax/relax1.jpg", "mentalHealth/Relax/relax2.jpg", "mentalHealth/Relax/relax3.jpg", "mentalHealth/Relax/relax4.jpg", "mentalHealth/Relax/relax5.jpg"]
     let energeticImgs = ["mentalHealth/Energetic/energetic1.jpg","mentalHealth/Energetic/energetic2.jpg","mentalHealth/Energetic/energetic3.jpg","mentalHealth/Energetic/energetic4.jpg","mentalHealth/Energetic/energetic5.jpg"]
     let flowImgs = ["mentalHealth/Flow/flow1.jpg","mentalHealth/Flow/flow2.jpg","mentalHealth/Flow/flow3.jpg","mentalHealth/Flow/flow4.jpg","mentalHealth/Flow/flow5.jpg"]
     let energyImgs = ["mentalHealth/Energy_Healing/energy1.jpg","mentalHealth/Energy_Healing/energy2.jpg","mentalHealth/Energy_Healing/energy3.jpg","mentalHealth/Energy_Healing/energy4.jpg","mentalHealth/Energy_Healing/energy5.jpg"]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,6 +134,30 @@ extension MentalHealthViewController: UICollectionViewDelegate, UICollectionView
         }
         
         return cell!
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard!.instantiateViewController(withIdentifier: "player") as! PlayerViewController
+        
+        if(collectionView == recommendedView) {
+            
+        }
+        else if (collectionView == relaxView) {
+            vc.name = relaxImgs[indexPath.row];
+        }
+        else if (collectionView == energeticView) {
+            vc.name = energeticImgs[indexPath.row];
+        }
+        else if (collectionView == flowView) {
+            vc.name = flowImgs[indexPath.row];
+        }
+        else if (collectionView == energyView) {
+            vc.name = energyImgs[indexPath.row];
+        }
+        
+        vc.name = String(vc.name.dropLast(3)) + "mp4"
+
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

@@ -11,6 +11,8 @@
 		E49E7CDF25C625EC0040DB75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49E7CDE25C625EC0040DB75 /* Main.storyboard */; };
 		E49E7CED25C62CC70040DB75 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E7CEC25C62CC70040DB75 /* ForgotPasswordViewController.swift */; };
 		E4B0D73C25D0A8270081B905 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B0D73B25D0A8270081B905 /* TabBarViewController.swift */; };
+		E4B1F26225D4A8B000FC237C /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1F26125D4A8B000FC237C /* PlayerViewController.swift */; };
+		E4B1F28325D4BE1F00FC237C /* MentalSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1F28225D4BE1F00FC237C /* MentalSettingsViewController.swift */; };
 		E4C609FD25C0958400B89AE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C609FC25C0958400B89AE5 /* AppDelegate.swift */; };
 		E4C609FF25C0958400B89AE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C609FE25C0958400B89AE5 /* SceneDelegate.swift */; };
 		E4C60A0625C0958900B89AE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C60A0525C0958900B89AE5 /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		E49E7CDE25C625EC0040DB75 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E49E7CEC25C62CC70040DB75 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		E4B0D73B25D0A8270081B905 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E4B1F26125D4A8B000FC237C /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		E4B1F28225D4BE1F00FC237C /* MentalSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalSettingsViewController.swift; sourceTree = "<group>"; };
 		E4C609F925C0958400B89AE5 /* Heartadvisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heartadvisor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C609FC25C0958400B89AE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4C609FE25C0958400B89AE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		E4B1F28125D4BE0C00FC237C /* Mental Health */ = {
+			isa = PBXGroup;
+			children = (
+				E4C60A4525C098DC00B89AE5 /* MentalHealthViewController.swift */,
+				E4B1F28225D4BE1F00FC237C /* MentalSettingsViewController.swift */,
+			);
+			path = "Mental Health";
+			sourceTree = "<group>";
+		};
 		E4C609F025C0958400B89AE5 = {
 			isa = PBXGroup;
 			children = (
@@ -199,11 +212,12 @@
 			isa = PBXGroup;
 			children = (
 				E49E7CC525C6205E0040DB75 /* Login */,
+				E4B1F28125D4BE0C00FC237C /* Mental Health */,
 				E4C60A4025C098CB00B89AE5 /* HomeViewController.swift */,
-				E4C60A4525C098DC00B89AE5 /* MentalHealthViewController.swift */,
 				E4C60A4A25C098E600B89AE5 /* SleepViewController.swift */,
 				E4C60A4F25C098F500B89AE5 /* ExerciseViewController.swift */,
 				E4C60A5425C098FE00B89AE5 /* DietViewController.swift */,
+				E4B1F26125D4A8B000FC237C /* PlayerViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -410,7 +424,9 @@
 			files = (
 				E4C60A5525C098FE00B89AE5 /* DietViewController.swift in Sources */,
 				E4C60A5A25C09E2A00B89AE5 /* Extensions.swift in Sources */,
+				E4B1F28325D4BE1F00FC237C /* MentalSettingsViewController.swift in Sources */,
 				E4C60A8625C0D2F700B89AE5 /* Utilities.swift in Sources */,
+				E4B1F26225D4A8B000FC237C /* PlayerViewController.swift in Sources */,
 				E4C60A4B25C098E600B89AE5 /* SleepViewController.swift in Sources */,
 				E4C60A5025C098F500B89AE5 /* ExerciseViewController.swift in Sources */,
 				E4C60A3C25C098BA00B89AE5 /* LoginViewController.swift in Sources */,

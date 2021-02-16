@@ -319,6 +319,7 @@ PODS:
   - PanModal (1.2.7)
   - PromisesObjC (1.2.12)
   - SideMenu (6.5.0)
+  - TagListView (1.4.1)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -329,6 +330,7 @@ DEPENDENCIES:
   - Kingfisher
   - PanModal
   - SideMenu
+  - TagListView
 
 SPEC REPOS:
   trunk:
@@ -353,6 +355,7 @@ SPEC REPOS:
     - PanModal
     - PromisesObjC
     - SideMenu
+    - TagListView
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -376,7 +379,8 @@ SPEC CHECKSUMS:
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
 
-PODFILE CHECKSUM: 82be0ceaf8d994c0b80f088e20f443d372e0fb7f
+PODFILE CHECKSUM: b35b0b0e65b1ced29ddc3b6c7f85b0723fef9fd5
 
 COCOAPODS: 1.10.0

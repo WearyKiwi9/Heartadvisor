@@ -15,5 +15,5 @@ target 'Heartadvisor' do
   pod 'Firebase/Firestore'
   pod 'Kingfisher'
   pod 'ImageSlideshow'
-
+  pod 'TagListView'
 end
