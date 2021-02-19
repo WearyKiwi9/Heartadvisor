@@ -17,18 +17,24 @@ class exerciseCell: UICollectionViewCell {
 
 class ExerciseViewController: UIViewController {
     
+    var weeklyGoal: Int = 120
+    var currentProgress: Int = 60
+    
     @IBOutlet weak var recommendedLabel: UILabel!
     @IBOutlet weak var newLabel: UILabel!
     @IBOutlet weak var upperLabel: UILabel!
     @IBOutlet weak var lowerLabel: UILabel!
     @IBOutlet weak var coreLabel: UILabel!
+    @IBOutlet weak var weeklyProgressLabel: UILabel!
+    @IBOutlet weak var progressLabel: UILabel!
     
     @IBOutlet weak var recommendedView: UICollectionView!
     @IBOutlet weak var newView: UICollectionView!
     @IBOutlet weak var upperView: UICollectionView!
     @IBOutlet weak var lowerView: UICollectionView!
     @IBOutlet weak var coreView: UICollectionView!
-    
+    @IBOutlet weak var progressView: UIProgressView!
+
     let recommendedTitles = ["Rec 1","Rec 2", "Rec 3", "Rec 4", "Rec 5", "Rec 6"]
     let newTitles = ["15 Min TikTok Dance Party Workout","30 Min Cardio Kickboxing Workout", "20 Min Zumba Workout", "30 Min At Home Pilates Workout"]
     let upperTitles = ["Dumbbell Only Total Upper Body","Full Upper Body Workout Routine Using Dumbbells Only", "Intense At Home Upper Body Workout (No Equipment)", "15 Minute Upper Body Workout (No Equipment)", "20 Minute Upper Body Dumbbell Workout", "30 Minute Upper Body Workout (No Equipment)"]
@@ -40,6 +46,7 @@ class ExerciseViewController: UIViewController {
     let upperImgs = ["exercise/upperBody/yesEquip/upperbody_yesequip1.jpg", "exercise/upperBody/yesEquip/upperbody_yesequip2.jpg", "exercise/upperBody/noEquip/upperbody_noequip1.jpg", "exercise/upperBody/noEquip/upperbody_noequip2.jpg", "exercise/upperBody/yesEquip/upperbody_yesequip3.jpg", "exercise/upperBody/noEquip/upperbody_noequip3.jpg"]
     let lowerImgs = ["exercise/lowerBody/noEquip/lowerbody_noequip1.jpg", "exercise/lowerBody/yesEquip/lowerbody_yesequip1.jpg", "exercise/lowerBody/yesEquip/lowerbody_yesequip2.jpg", "exercise/lowerBody/noEquip/lowerbody_noequip2.jpg", "exercise/lowerBody/noEquip/lowerbody_noequip3.jpg", "exercise/lowerBody/yesEquip/lowerbody_yesequip3.jpg"]
     let coreImgs = ["exercise/core/noEquip/core_noequip1.jpg", "exercise/core/yesEquip/core_yesequip1.jpg", "exercise/core/noEquip/core_noequip2.jpg", "exercise/core/yesEquip/core_yesequip2.jpg", "exercise/core/noEquip/core_noequip3.jpg",""]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +74,11 @@ class ExerciseViewController: UIViewController {
         Utilities.styleSubHeaderLabel(upperLabel)
         Utilities.styleSubHeaderLabel(lowerLabel)
         Utilities.styleSubHeaderLabel(coreLabel)
+        Utilities.styleSubHeaderLabel(weeklyProgressLabel)
+        Utilities.styleParagraphLabel(progressLabel)
+        
+        progressLabel.text = String(currentProgress) + " / " + String(weeklyGoal) + " minutes"
+        progressView.setProgress(Float(currentProgress)/Float(weeklyGoal), animated: true)
     }
 }
 
@@ -130,4 +142,28 @@ extension ExerciseViewController: UICollectionViewDelegate, UICollectionViewData
         
         return cell!
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let vc = storyboard!.instantiateViewController(withIdentifier: "player") as! PlayerViewController
+            
+            if(collectionView == recommendedView) {
+                
+            }
+            else if (collectionView == newView) {
+                vc.name = newImgs[indexPath.row];
+            }
+            else if (collectionView == upperView) {
+                vc.name = upperImgs[indexPath.row];
+            }
+            else if (collectionView == lowerView) {
+                vc.name = lowerImgs[indexPath.row];
+            }
+            else if (collectionView == coreView) {
+                vc.name = coreImgs[indexPath.row];
+            }
+            
+            vc.name = String(vc.name.dropLast(3)) + "mp4"
+
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
 }

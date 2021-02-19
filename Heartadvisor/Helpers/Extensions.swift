@@ -58,4 +58,11 @@ extension UIViewController {
         
         present(menu, animated: true, completion: nil)
     }
+    
+    func showError(message: String, title: String = "HeartAdvisor") {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

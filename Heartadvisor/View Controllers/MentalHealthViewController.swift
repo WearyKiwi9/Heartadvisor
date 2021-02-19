@@ -8,15 +8,11 @@
 import UIKit
 
 class MentalHealthViewController: UIViewController {
-
-    @IBOutlet weak var recommendedLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationBarSetup()
-        
-        Utilities.styleSubHeaderLabel(recommendedLabel)
     }
 
 }
