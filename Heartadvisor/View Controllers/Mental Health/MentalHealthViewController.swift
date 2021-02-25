@@ -9,6 +9,8 @@ import UIKit
 import Kingfisher
 import FirebaseStorage
 import ImageSlideshow
+import FirebaseAuth
+import FirebaseFirestore
 
 class meditationCell: UICollectionViewCell {
     @IBOutlet weak var img: UIImageView!
@@ -30,15 +32,22 @@ class MentalHealthViewController: UIViewController {
     
     @IBOutlet weak var slideshow: ImageSlideshow!
     
+    var recommendedTitles = [String]()
     let relaxTitles = ["Relaxed Body Relaxed Mind", "Blissful Deep Relaxation", "Let Go & Relax", "10-Minute Meditation For Anxiety", "Sleep Hypnosis for Floating Relaxation"]
     let energeticTitles = ["10 Minute Guided Meditation","Power Check-In [Mindfulness Meditation]", "Positive Energy", "15 Minute Guided Meditation","Chakra Balance"]
     let flowTitles = ["Above & Beyond","Getting into the Flow","Get Into the Flow and Focus", "Guided Visual Meditation", "Arrive"]
     let energyTitles = ["Healing Light", "Soul Energy Alignment","Experience the Pure Loving Energy of the Universe", "Energy Healing", "Reiki Meditation"]
     
+    var recommendedImgs = [String]()
     let relaxImgs = ["mentalHealth/Relax/relax1.jpg", "mentalHealth/Relax/relax2.jpg", "mentalHealth/Relax/relax3.jpg", "mentalHealth/Relax/relax4.jpg", "mentalHealth/Relax/relax5.jpg"]
     let energeticImgs = ["mentalHealth/Energetic/energetic1.jpg","mentalHealth/Energetic/energetic2.jpg","mentalHealth/Energetic/energetic3.jpg","mentalHealth/Energetic/energetic4.jpg","mentalHealth/Energetic/energetic5.jpg"]
     let flowImgs = ["mentalHealth/Flow/flow1.jpg","mentalHealth/Flow/flow2.jpg","mentalHealth/Flow/flow3.jpg","mentalHealth/Flow/flow4.jpg","mentalHealth/Flow/flow5.jpg"]
     let energyImgs = ["mentalHealth/Energy_Healing/energy1.jpg","mentalHealth/Energy_Healing/energy2.jpg","mentalHealth/Energy_Healing/energy3.jpg","mentalHealth/Energy_Healing/energy4.jpg","mentalHealth/Energy_Healing/energy5.jpg"]
+    
+    var relaxFreq = 0.0
+    var energeticFreq = 0.0
+    var flowFreq = 0.0
+    var energyFreq = 0.0
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
@@ -48,6 +57,8 @@ class MentalHealthViewController: UIViewController {
         super.viewDidLoad()
 
         navigationBarSetup()
+        
+        getFreq()
         
         recommendedView.dataSource = self
         recommendedView.delegate = self
@@ -84,6 +95,85 @@ class MentalHealthViewController: UIViewController {
         Utilities.styleSubHeaderLabel(energeticLabel)
         Utilities.styleSubHeaderLabel(flowLabel)
     }
+    
+    func getFreq() {
+        //Setup Recommendations
+        
+        recommendedImgs.removeAll()
+        recommendedTitles.removeAll()
+        
+        let db = Firestore.firestore()
+        
+        db.collection("users").document(Auth.auth().currentUser!.uid)
+            .getDocument { querySnapshot, error in
+                guard let querySnapshot = querySnapshot, querySnapshot.exists else {return}
+                let data = querySnapshot.data()
+                
+                self.relaxFreq = data?["med_relax_freq"] as? Double ?? 0.25
+                self.energeticFreq = data?["med_energetic_freq"]  as? Double ?? 0.25
+                self.flowFreq = data?["med_flow_freq"] as? Double ?? 0.25
+                self.energyFreq = data?["med_energy_freq"] as? Double ?? 0.25
+                
+                self.setRecommendedView()
+        }
+    }
+    
+    func setRecommendedView() {
+        //Randomly select from titles based on freq of items
+        //If not already in recommended, add to recommended
+        //Continue until size is 5
+        let relaxArray = Array(repeating: "relax", count: Int(relaxFreq*100))
+        let energeticArray = Array(repeating: "energetic", count: Int(energeticFreq*100))
+        let flowArray = Array(repeating: "flow", count: Int(flowFreq*100))
+        let energyArray = Array(repeating: "energy", count: Int(energyFreq*100))
+        
+        let randomArray = relaxArray+energeticArray+flowArray+energyArray
+        
+        print(randomArray)
+        
+        while(recommendedTitles.count != 5) {
+            let type = randomArray.randomElement()
+            if (type == "relax") {
+                var title = relaxTitles.randomElement()
+                while(recommendedTitles.contains(title!)) {
+                    title = relaxTitles.randomElement()
+                }
+                recommendedTitles.append(title!)
+                recommendedImgs.append(relaxImgs[relaxTitles.firstIndex(of: title!)!])
+            }
+            if (type == "energetic") {
+                var title = energeticTitles.randomElement()
+                while(recommendedTitles.contains(title!)) {
+                    title = energeticTitles.randomElement()
+                }
+                recommendedTitles.append(title!)
+                recommendedImgs.append(energeticImgs[energeticTitles.firstIndex(of: title!)!])
+            }
+            if (type == "flow") {
+                var title = flowTitles.randomElement()
+                while(recommendedTitles.contains(title!)) {
+                    title = flowTitles.randomElement()
+                }
+                recommendedTitles.append(title!)
+                recommendedImgs.append(flowImgs[flowTitles.firstIndex(of: title!)!])
+            }
+            if (type == "energy") {
+                var title = energyTitles.randomElement()
+                while(recommendedTitles.contains(title!)) {
+                    title = energyTitles.randomElement()
+                }
+                recommendedTitles.append(title!)
+                recommendedImgs.append(energyImgs[energyTitles.firstIndex(of: title!)!])
+            }
+        }
+        print(recommendedTitles)
+        print(recommendedImgs)
+        recommendedView.reloadData()
+    }
+    
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {
+        getFreq()
+    }
 
 }
 
@@ -100,8 +190,10 @@ extension MentalHealthViewController: UICollectionViewDelegate, UICollectionView
         var imageString = ""
         
         if(collectionView == recommendedView) {
-            cell?.title.text = "Recommended"
-            
+            if(recommendedTitles.count > 0) {
+                cell?.title.text = recommendedTitles[indexPath.row]
+                imageString = recommendedImgs[indexPath.row]
+            }
         }
         else if (collectionView == relaxView) {
             cell?.title.text = relaxTitles[indexPath.row]

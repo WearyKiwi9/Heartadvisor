@@ -892,83 +892,161 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWx-jT-Q0n">
-                                <rect key="frame" x="16" y="108" width="382" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Um8-yx-Czj" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
-                                <rect key="frame" x="16" y="137" width="382" height="65"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="minValue">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                        <real key="value" value="100"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
-                                        <color key="value" red="0.51764705879999995" green="0.0" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="colorBetweenHandles">
-                                        <color key="value" red="0.51764705879999995" green="0.0" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGN-4d-Cjb">
-                                <rect key="frame" x="16" y="218" width="382" height="21"/>
+                                <rect key="frame" x="16" y="108" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ij8-kB-NKR" customClass="TagListView" customModule="TagListView">
-                                <rect key="frame" x="16" y="247" width="382" height="20"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingY">
-                                        <real key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingX">
-                                        <real key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="tagSelectedBackgroundColor">
-                                        <color key="value" red="0.51764705882352935" green="0.0" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
-                                        <color key="value" red="0.36470588235294116" green="0.45098039215686275" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ifq-1U-p3S">
+                                <rect key="frame" x="16" y="173" width="382" height="140"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jnv-aq-dgn">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Relax Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnG-4a-yxh">
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="nfz-e1-bcu">
+                                                <rect key="frame" x="221" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="relax_stepperValueChanged:" destination="aOE-Za-XmL" eventType="valueChanged" id="zBa-9i-jOa"/>
+                                                </connections>
+                                            </stepper>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKB-lw-Krl">
+                                                <rect key="frame" x="325" y="0.0" width="57" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7JB-hT-HGZ">
+                                        <rect key="frame" x="0.0" y="36" width="382" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Energetic Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucX-9e-Fb0">
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="1oE-bS-mLi">
+                                                <rect key="frame" x="221" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="energetic_stepperValueChanged:" destination="aOE-Za-XmL" eventType="valueChanged" id="mCb-1C-pPp"/>
+                                                </connections>
+                                            </stepper>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foC-AR-p9H">
+                                                <rect key="frame" x="325" y="0.0" width="57" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3CI-BW-mr8">
+                                        <rect key="frame" x="0.0" y="72" width="382" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Flow Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2a-Vo-H4H">
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="hK5-yl-nuN">
+                                                <rect key="frame" x="221" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="flow_stepperValueChanged:" destination="aOE-Za-XmL" eventType="valueChanged" id="4lZ-cy-anp"/>
+                                                </connections>
+                                            </stepper>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVq-W5-ATp">
+                                                <rect key="frame" x="325" y="0.0" width="57" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MwI-1M-b8N">
+                                        <rect key="frame" x="0.0" y="108" width="382" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Energy Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obN-1r-IuX">
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="R6B-03-HMx">
+                                                <rect key="frame" x="221" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="energy_stepperValueChanged:" destination="aOE-Za-XmL" eventType="valueChanged" id="tLZ-2G-ocH"/>
+                                                </connections>
+                                            </stepper>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.25" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWR-Cq-jRB">
+                                                <rect key="frame" x="325" y="0.0" width="57" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="R6B-03-HMx" firstAttribute="width" secondItem="nfz-e1-bcu" secondAttribute="width" id="3lR-04-3HA"/>
+                                    <constraint firstItem="Z2a-Vo-H4H" firstAttribute="width" secondItem="SnG-4a-yxh" secondAttribute="width" id="HOc-OJ-8rz"/>
+                                    <constraint firstItem="obN-1r-IuX" firstAttribute="width" secondItem="SnG-4a-yxh" secondAttribute="width" id="JLc-bP-eAv"/>
+                                    <constraint firstItem="ucX-9e-Fb0" firstAttribute="width" secondItem="SnG-4a-yxh" secondAttribute="width" id="Vi3-SC-Nr6"/>
+                                    <constraint firstItem="1oE-bS-mLi" firstAttribute="width" secondItem="nfz-e1-bcu" secondAttribute="width" id="hwo-6I-034"/>
+                                    <constraint firstItem="hK5-yl-nuN" firstAttribute="width" secondItem="nfz-e1-bcu" secondAttribute="width" id="pQ5-DQ-QeO"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a level of frequency for each type of video offered for meditation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIw-c5-hSG">
+                                <rect key="frame" x="16" y="136.5" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2SE-4e-E4K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rWx-jT-Q0n" firstAttribute="leading" secondItem="2SE-4e-E4K" secondAttribute="leading" constant="16" id="1jM-6H-0GX"/>
-                            <constraint firstItem="Um8-yx-Czj" firstAttribute="leading" secondItem="2SE-4e-E4K" secondAttribute="leading" constant="16" id="5QG-3W-YFI"/>
-                            <constraint firstItem="Um8-yx-Czj" firstAttribute="top" secondItem="rWx-jT-Q0n" secondAttribute="bottom" constant="8" id="CAG-sg-UZ1"/>
-                            <constraint firstItem="2SE-4e-E4K" firstAttribute="trailing" secondItem="ij8-kB-NKR" secondAttribute="trailing" constant="16" id="M3N-qT-tuk"/>
-                            <constraint firstItem="rWx-jT-Q0n" firstAttribute="top" secondItem="2SE-4e-E4K" secondAttribute="top" constant="20" id="MYv-T6-2mh"/>
-                            <constraint firstItem="ij8-kB-NKR" firstAttribute="leading" secondItem="2SE-4e-E4K" secondAttribute="leading" constant="16" id="Td0-do-Pwx"/>
-                            <constraint firstItem="ij8-kB-NKR" firstAttribute="top" secondItem="GGN-4d-Cjb" secondAttribute="bottom" constant="8" id="VMb-TL-JJF"/>
-                            <constraint firstItem="GGN-4d-Cjb" firstAttribute="top" secondItem="Um8-yx-Czj" secondAttribute="bottom" constant="16" id="bs3-GN-Pdw"/>
+                            <constraint firstItem="Ifq-1U-p3S" firstAttribute="top" secondItem="EIw-c5-hSG" secondAttribute="bottom" constant="16" id="21p-6D-5aj"/>
+                            <constraint firstItem="2SE-4e-E4K" firstAttribute="trailing" secondItem="EIw-c5-hSG" secondAttribute="trailing" constant="16" id="GRS-Mc-pq4"/>
+                            <constraint firstItem="2SE-4e-E4K" firstAttribute="trailing" secondItem="Ifq-1U-p3S" secondAttribute="trailing" constant="16" id="LMv-rb-BDs"/>
                             <constraint firstItem="GGN-4d-Cjb" firstAttribute="leading" secondItem="2SE-4e-E4K" secondAttribute="leading" constant="16" id="c2L-L3-9a3"/>
-                            <constraint firstItem="2SE-4e-E4K" firstAttribute="trailing" secondItem="Um8-yx-Czj" secondAttribute="trailing" constant="16" id="iUJ-Yd-YCT"/>
+                            <constraint firstItem="EIw-c5-hSG" firstAttribute="top" secondItem="GGN-4d-Cjb" secondAttribute="bottom" constant="8" id="mQo-vu-Z0a"/>
                             <constraint firstItem="2SE-4e-E4K" firstAttribute="trailing" secondItem="GGN-4d-Cjb" secondAttribute="trailing" constant="16" id="w1d-rT-neR"/>
-                            <constraint firstItem="2SE-4e-E4K" firstAttribute="trailing" secondItem="rWx-jT-Q0n" secondAttribute="trailing" constant="16" id="zcD-QJ-O7m"/>
+                            <constraint firstItem="EIw-c5-hSG" firstAttribute="leading" secondItem="2SE-4e-E4K" secondAttribute="leading" constant="16" id="xaN-Ml-Sff"/>
+                            <constraint firstItem="GGN-4d-Cjb" firstAttribute="top" secondItem="2SE-4e-E4K" secondAttribute="top" constant="20" id="xw0-Wr-ZHo"/>
+                            <constraint firstItem="Ifq-1U-p3S" firstAttribute="leading" secondItem="2SE-4e-E4K" secondAttribute="leading" constant="16" id="zcI-be-Ftf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mjQ-64-cLR"/>
+                    <navigationItem key="navigationItem" id="mjQ-64-cLR">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="zoZ-Af-L4G">
+                            <connections>
+                                <action selector="onSave:" destination="aOE-Za-XmL" id="MBv-Dz-7jB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="durationLabel" destination="rWx-jT-Q0n" id="YGh-zG-ZMG"/>
+                        <outlet property="energeticNum" destination="foC-AR-p9H" id="p6Z-gg-reI"/>
+                        <outlet property="energeticParagraph" destination="ucX-9e-Fb0" id="Mi3-lX-1EA"/>
+                        <outlet property="energeticStepper" destination="1oE-bS-mLi" id="AhE-of-jVb"/>
+                        <outlet property="energyNum" destination="mWR-Cq-jRB" id="7Dk-Ie-apC"/>
+                        <outlet property="energyParagraph" destination="obN-1r-IuX" id="blE-ex-Tdh"/>
+                        <outlet property="energyStepper" destination="R6B-03-HMx" id="UUM-SA-bds"/>
+                        <outlet property="flowNum" destination="qVq-W5-ATp" id="FOf-9u-07y"/>
+                        <outlet property="flowParagraph" destination="Z2a-Vo-H4H" id="e3c-T0-AcX"/>
+                        <outlet property="flowStepper" destination="hK5-yl-nuN" id="zU4-3j-lFx"/>
                         <outlet property="genresLabel" destination="GGN-4d-Cjb" id="NRZ-Wn-oEr"/>
-                        <outlet property="tagListView" destination="ij8-kB-NKR" id="yg5-r6-a0H"/>
+                        <outlet property="paragraphLabel" destination="EIw-c5-hSG" id="hO0-Hc-FAz"/>
+                        <outlet property="relaxNum" destination="RKB-lw-Krl" id="ge4-n8-nRG"/>
+                        <outlet property="relaxParagraph" destination="SnG-4a-yxh" id="gbP-5h-7Vi"/>
+                        <outlet property="relaxStepper" destination="nfz-e1-bcu" id="4la-Gs-YkV"/>
+                        <segue destination="IDh-8G-bNE" kind="unwind" identifier="unwindToMeditation" unwindAction="unwind:" id="NSY-2p-AB9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjQ-OS-Lk8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="IDh-8G-bNE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1535" y="3264"/>
         </scene>
@@ -1008,14 +1086,6 @@
             <point key="canvasLocation" x="49" y="-480"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Um8-yx-Czj">
-            <size key="intrinsicContentSize" width="-1" height="65"/>
-        </designable>
-        <designable name="ij8-kB-NKR">
-            <size key="intrinsicContentSize" width="382" height="20"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="TNR-xJ-CPz"/>
     </inferredMetricsTieBreakers>
