@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		081A3A4125DDCB5D004A36A8 /* ExerciseProgressSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A3A4025DDCB5D004A36A8 /* ExerciseProgressSettingsViewController.swift */; };
-		085BC4DA25DC616000E6A64D /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085BC4D925DC616000E6A64D /* PlayerViewController.swift */; };
 		085BC4DF25DC90A300E6A64D /* ExerciseSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085BC4DE25DC90A300E6A64D /* ExerciseSettingsViewController.swift */; };
+		086E8D9F25E7849200900C7E /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E8D9E25E7849200900C7E /* PlayerViewController.swift */; };
 		08C3064E25D5A3B000D9C829 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C3064D25D5A3B000D9C829 /* GoogleService-Info.plist */; };
 		407C04782CAE62931EFEE192 /* Pods_Heartadvisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81BA7A6A10E868342971875 /* Pods_Heartadvisor.framework */; };
 		E49E7CDF25C625EC0040DB75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49E7CDE25C625EC0040DB75 /* Main.storyboard */; };
@@ -54,8 +54,8 @@
 
 /* Begin PBXFileReference section */
 		081A3A4025DDCB5D004A36A8 /* ExerciseProgressSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProgressSettingsViewController.swift; sourceTree = "<group>"; };
-		085BC4D925DC616000E6A64D /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = "../../../../../../Desktop/Heartadvisor/Heartadvisor/View Controllers/PlayerViewController.swift"; sourceTree = "<group>"; };
 		085BC4DE25DC90A300E6A64D /* ExerciseSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSettingsViewController.swift; sourceTree = "<group>"; };
+		086E8D9E25E7849200900C7E /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		08C3064D25D5A3B000D9C829 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6B34C10496B5498021D37E78 /* Pods-Heartadvisor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartadvisor.debug.xcconfig"; path = "Target Support Files/Pods-Heartadvisor/Pods-Heartadvisor.debug.xcconfig"; sourceTree = "<group>"; };
 		70BA94F7D8F6984D433DB39A /* Pods-Heartadvisor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartadvisor.release.xcconfig"; path = "Target Support Files/Pods-Heartadvisor/Pods-Heartadvisor.release.xcconfig"; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 		E4C60A3A25C0989E00B89AE5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				085BC4D925DC616000E6A64D /* PlayerViewController.swift */,
+				086E8D9E25E7849200900C7E /* PlayerViewController.swift */,
 				E49E7CC525C6205E0040DB75 /* Login */,
 				E4C60A4025C098CB00B89AE5 /* HomeViewController.swift */,
 				E4C60A4525C098DC00B89AE5 /* MentalHealthViewController.swift */,
@@ -430,13 +430,13 @@
 				E4C60A3C25C098BA00B89AE5 /* LoginViewController.swift in Sources */,
 				E4C60A6225C09F8800B89AE5 /* Constants.swift in Sources */,
 				085BC4DF25DC90A300E6A64D /* ExerciseSettingsViewController.swift in Sources */,
-				085BC4DA25DC616000E6A64D /* PlayerViewController.swift in Sources */,
 				E4C609FD25C0958400B89AE5 /* AppDelegate.swift in Sources */,
 				E49E7CED25C62CC70040DB75 /* ForgotPasswordViewController.swift in Sources */,
 				E4C60A4625C098DC00B89AE5 /* MentalHealthViewController.swift in Sources */,
 				081A3A4125DDCB5D004A36A8 /* ExerciseProgressSettingsViewController.swift in Sources */,
 				E4C609FF25C0958400B89AE5 /* SceneDelegate.swift in Sources */,
 				E4C60A4125C098CB00B89AE5 /* HomeViewController.swift in Sources */,
+				086E8D9F25E7849200900C7E /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
