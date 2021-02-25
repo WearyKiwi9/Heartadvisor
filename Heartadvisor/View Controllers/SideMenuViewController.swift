@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 
 class SideMenuViewController: UIViewController {
@@ -16,7 +17,16 @@ class SideMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let db = Firestore.firestore()
+        
+        db.collection("users").document(Auth.auth().currentUser!.uid)
+            .getDocument { querySnapshot, error in
+                guard let querySnapshot = querySnapshot, querySnapshot.exists else {return}
+                let data = querySnapshot.data()
+                
+                self.headerLabel.text = ("Hi \(data?["first_name"] ?? "") \(data?["last_name"] ?? "")!" )
+
+        }
     }
     
     override func viewDidLayoutSubviews() {
