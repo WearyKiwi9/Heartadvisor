@@ -73,6 +73,8 @@ class MentalHealthViewController: UIViewController {
             ImageSource(image: UIImage(named: "meditation-quotes-5")!)
         ])
         slideshow.slideshowInterval = 4
+        
+        // Set up settings bar button
     }
     
     override func viewDidLayoutSubviews() {

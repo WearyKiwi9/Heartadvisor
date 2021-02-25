@@ -2,14 +2,14 @@
 //  PlayerViewController.swift
 //  Heartadvisor
 //
-//  Created by Tejal Patel on 2/10/21.
+//  Created by Tejal Patel on 2/18/21.
 //
 
 import UIKit
 import FirebaseStorage
 import AVKit
 
-class PlayerViewController: UITabBarController {
+class PlayerViewController: UIViewController {
 
     var player = AVPlayer()
     var avPlayerController = AVPlayerViewController()
@@ -17,6 +17,12 @@ class PlayerViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Transparent Background
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
         
         self.tabBarController?.tabBar.isHidden = true
         
@@ -46,5 +52,6 @@ class PlayerViewController: UITabBarController {
     override func viewDidDisappear(_ animated: Bool) {
         self.player.pause()
     }
+
 
 }

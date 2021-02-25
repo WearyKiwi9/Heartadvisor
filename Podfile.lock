@@ -318,6 +318,7 @@ PODS:
   - nanopb/encode (2.30907.0)
   - PanModal (1.2.7)
   - PromisesObjC (1.2.12)
+  - RangeSeekSlider (1.8.0)
   - SideMenu (6.5.0)
   - TagListView (1.4.1)
 
@@ -329,6 +330,7 @@ DEPENDENCIES:
   - ImageSlideshow
   - Kingfisher
   - PanModal
+  - RangeSeekSlider
   - SideMenu
   - TagListView
 
@@ -354,6 +356,7 @@ SPEC REPOS:
     - nanopb
     - PanModal
     - PromisesObjC
+    - RangeSeekSlider
     - SideMenu
     - TagListView
 
@@ -378,9 +381,10 @@ SPEC CHECKSUMS:
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
 
-PODFILE CHECKSUM: b35b0b0e65b1ced29ddc3b6c7f85b0723fef9fd5
+PODFILE CHECKSUM: 83df50c3f98b70a321a7062dc8a52c0b92fedf40
 
 COCOAPODS: 1.10.0

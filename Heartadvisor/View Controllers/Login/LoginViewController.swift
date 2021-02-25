@@ -25,6 +25,15 @@ class LoginViewController: UIViewController {
     
     var type = "Sign Up"
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Hide Navigation bar when login screen appears
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
