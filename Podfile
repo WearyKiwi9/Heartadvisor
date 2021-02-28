@@ -9,5 +9,12 @@ target 'Heartadvisor' do
 
   pod 'SideMenu'
   pod 'PanModal' 
-
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
+  pod 'Kingfisher'
+  pod 'ImageSlideshow'
+  pod 'RangeSeekSlider'
+  pod 'TagListView'
 end
