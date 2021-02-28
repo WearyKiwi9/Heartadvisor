@@ -181,22 +181,6 @@
             </objects>
             <point key="canvasLocation" x="775" y="2192"/>
         </scene>
-        <!--Diet View Controller-->
-        <scene sceneID="By9-Tn-aUT">
-            <objects>
-                <viewController id="b2J-wV-wOH" customClass="DietViewController" customModule="Heartadvisor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6pE-pR-cbE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="J60-pF-VCM"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="hx6-3c-rcu"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0q2-jf-aYl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1551" y="2192"/>
-        </scene>
         <!--Mental Health View Controller-->
         <scene sceneID="1Ob-10-kKn">
             <objects>
@@ -415,9 +399,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="b2J-wV-wOH" kind="relationship" relationship="rootViewController" id="LdN-BE-PGC"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbn-JM-l9h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -507,6 +488,92 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKO-MY-aZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="880" y="118"/>
+        </scene>
+        <!--Diet View Controller-->
+        <scene sceneID="jpY-WV-4gO">
+            <objects>
+                <viewController id="PEb-Ei-hnk" customClass="DietViewController" customModule="Heartadvisor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hJM-f0-m3E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Calorie Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wbg-Nq-Kbu">
+                                <rect key="frame" x="60" y="394" width="165.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcn-ci-VOo">
+                                <rect key="frame" x="285.5" y="394" width="68.5" height="30"/>
+                                <state key="normal" title="Add Meal"/>
+                                <connections>
+                                    <action selector="doSomething:" destination="PEb-Ei-hnk" eventType="touchUpInside" id="OTW-A9-SZv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recommendations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cf4-6u-Vg3">
+                                <rect key="frame" x="20" y="497" width="142" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxO-gn-bV3">
+                                <rect key="frame" x="135" y="94" width="144" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0s-t4-MZJ">
+                                <rect key="frame" x="60" y="526" width="288" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tile1Select:" destination="PEb-Ei-hnk" eventType="touchUpInside" id="Pof-Xu-ghx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eh-FZ-OX4">
+                                <rect key="frame" x="60" y="696" width="288" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tile3Select:" destination="PEb-Ei-hnk" eventType="touchUpInside" id="DdY-Na-JMO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65n-cI-lZy">
+                                <rect key="frame" x="60" y="609" width="288" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tile2Select:" destination="PEb-Ei-hnk" eventType="touchUpInside" id="DWb-HV-5p3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kdU-QL-UNt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kdU-QL-UNt" firstAttribute="trailing" secondItem="Tcn-ci-VOo" secondAttribute="trailing" constant="60" id="8yT-WS-vpm"/>
+                            <constraint firstItem="TxO-gn-bV3" firstAttribute="leading" secondItem="kdU-QL-UNt" secondAttribute="leading" constant="135" id="9JV-Iw-YKr"/>
+                            <constraint firstItem="kdU-QL-UNt" firstAttribute="trailing" secondItem="TxO-gn-bV3" secondAttribute="trailing" constant="135" id="BWK-6K-smk"/>
+                            <constraint firstItem="Tcn-ci-VOo" firstAttribute="leading" secondItem="Wbg-Nq-Kbu" secondAttribute="trailing" constant="60" id="DIa-zx-70Q"/>
+                            <constraint firstItem="TxO-gn-bV3" firstAttribute="top" secondItem="kdU-QL-UNt" secondAttribute="top" constant="50" id="HLq-4x-SNO"/>
+                            <constraint firstItem="Wbg-Nq-Kbu" firstAttribute="top" secondItem="kdU-QL-UNt" secondAttribute="top" constant="350" id="RTa-zH-Q2y"/>
+                            <constraint firstItem="Tcn-ci-VOo" firstAttribute="top" secondItem="kdU-QL-UNt" secondAttribute="top" constant="350" id="pVz-7q-fyB"/>
+                            <constraint firstItem="Wbg-Nq-Kbu" firstAttribute="leading" secondItem="kdU-QL-UNt" secondAttribute="leading" constant="60" id="vEi-z4-wsz"/>
+                            <constraint firstItem="Tcn-ci-VOo" firstAttribute="leading" secondItem="Wbg-Nq-Kbu" secondAttribute="trailing" constant="60" id="x75-tF-U30"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="H0X-ma-tBR"/>
+                    <connections>
+                        <outlet property="cAmount" destination="Wbg-Nq-Kbu" id="xJ8-Fs-JmR"/>
+                        <outlet property="cButton" destination="Tcn-ci-VOo" id="dPf-5K-Yuj"/>
+                        <outlet property="cGoal" destination="TxO-gn-bV3" id="UKQ-5F-0DE"/>
+                        <outlet property="tile1" destination="b0s-t4-MZJ" id="JoS-A3-ZRs"/>
+                        <outlet property="tile2" destination="65n-cI-lZy" id="JKD-Hn-UfZ"/>
+                        <outlet property="tile3" destination="5eh-FZ-OX4" id="i86-ef-Psz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DmZ-KD-LQg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1550.7246376811595" y="2191.0714285714284"/>
         </scene>
     </scenes>
     <resources>
