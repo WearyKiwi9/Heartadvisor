@@ -230,13 +230,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3v1-PW-fuO">
-                                <rect key="frame" x="16" y="108" width="116" height="21"/>
+                                <rect key="frame" x="16" y="64" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Ac-SQ-1Jx">
-                                <rect key="frame" x="0.0" y="149" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="105" width="414" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="R3I-Hh-gPc"/>
@@ -331,7 +331,6 @@
             </objects>
             <point key="canvasLocation" x="-1533" y="2192"/>
         </scene>
-        <!--Tab Bar Controller-->
         <!--Diet View Controller-->
         <scene sceneID="By9-Tn-aUT">
             <objects>
@@ -456,6 +455,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PEb-Ei-hnk" kind="relationship" relationship="rootViewController" id="ovh-qM-cfa"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbn-JM-l9h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1376,12 +1378,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Calorie Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wbg-Nq-Kbu">
-                                <rect key="frame" x="60" y="394" width="165.5" height="34"/>
+                                <rect key="frame" x="60" y="438" width="165.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcn-ci-VOo">
-                                <rect key="frame" x="285.5" y="394" width="68.5" height="30"/>
+                                <rect key="frame" x="285.5" y="438" width="68.5" height="30"/>
                                 <state key="normal" title="Add Meal"/>
                                 <connections>
                                     <action selector="doSomething:" destination="PEb-Ei-hnk" eventType="touchUpInside" id="OTW-A9-SZv"/>
@@ -1395,7 +1397,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxO-gn-bV3">
-                                <rect key="frame" x="135" y="94" width="144" height="21"/>
+                                <rect key="frame" x="135" y="138" width="144" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
