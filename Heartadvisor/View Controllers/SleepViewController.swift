@@ -1,30 +1,186 @@
-//
-//  SleepViewController.swift
-//  Heartadvisor
-//
-//  Created by Tejal Patel on 1/26/21.
-//
-
 import UIKit
 
 class SleepViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var topQ: UILabel!
+    @IBOutlet weak var missingSleepLable: UILabel!
+    @IBOutlet weak var missingSleepOut: UILabel!
+    @IBOutlet weak var recommendSleepLable: UILabel!
+    @IBOutlet weak var recommendSleepOut: UILabel!
+    @IBOutlet weak var recommendWakeLable: UILabel!
+    @IBOutlet weak var recommendWakeOut: UILabel!
+    @IBOutlet weak var preferredWakeWeek: UILabel!
+    @IBOutlet weak var preferredWakeWeekOut: UILabel!
+    @IBOutlet weak var preferredSleepWeek: UILabel!
+    @IBOutlet weak var preferredSleepWeekOut: UILabel!
+    @IBOutlet weak var enterWakeLable: UILabel!
+    @IBOutlet weak var enterWakeHourIn: UITextField!
+    @IBOutlet weak var enterWakeDot: UILabel!
+    @IBOutlet weak var enterWakeMinIn: UITextField!
+    @IBOutlet weak var enterSleepLable: UILabel!
+    @IBOutlet weak var enterSleepHourIn: UITextField!
+    @IBOutlet weak var enterSleepDot: UILabel!
+    @IBOutlet weak var enterSleepMinIn: UITextField!
+    var wakeTimesWeek: [Int] = []
+    var sleepTimesWeek: [Int] = []
+ 
+    
+    
+     @objc func enterWakeHourInDidChange(_ textField: UITextField) {
+        if enterWakeHourIn.text != "" && enterWakeMinIn.text != "" && enterSleepHourIn.text != "" && enterSleepMinIn.text != "" {
+            missingRecommendSleepTime()
+        }
+     }
+     
+     @objc func enterWakeMinInDidChange(_ textField: UITextField) {
+        if enterWakeHourIn.text != "" && enterWakeMinIn.text != "" && enterSleepHourIn.text != "" && enterSleepMinIn.text != "" {
+            missingRecommendSleepTime()
+        }
+     }
+     
+     @objc func enterSleepHourInDidChange(_ textField: UITextField) {
+        if enterWakeHourIn.text != "" && enterWakeMinIn.text != "" && enterSleepHourIn.text != "" && enterSleepMinIn.text != "" {
+            missingRecommendSleepTime()
+        }
+     }
+     
+     @objc func enterSleepMinInDidChange(_ textField: UITextField) {
+        if enterWakeHourIn.text != "" && enterWakeMinIn.text != "" && enterSleepHourIn.text != "" && enterSleepMinIn.text != "" {
+            missingRecommendSleepTime()
+        }
+     }
+     
+     override func viewDidLoad() {
+         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        navigationBarSetup()
+         navigationBarSetup()
+         
+         enterWakeHourIn.addTarget(self, action: #selector(SleepViewController.enterWakeHourInDidChange(_:)), for: .editingChanged)
+         
+         enterWakeMinIn.addTarget(self, action: #selector(SleepViewController.enterWakeMinInDidChange(_:)), for: .editingChanged)
+         
+         enterSleepHourIn.addTarget(self, action: #selector(SleepViewController.enterSleepHourInDidChange(_:)), for: .editingChanged)
+         
+         enterSleepMinIn.addTarget(self, action: #selector(SleepViewController.enterSleepMinInDidChange(_:)), for: .editingChanged)
+
+     }
+
+    
+    func missingRecommendSleepTime() {
+        
+        //calculating missing hours of last night sleep / calculating recommended wake up and sleep time
+        //calculating preferred wake up and sleep time based on the collected user data
+        var missingSleep: Int = 0
+        var wakeHourMiss: Int = 0
+        var sleepHourMiss: Int = 0
+        var aveWakeWeek: Int = 0
+        var aveSleepWeek: Int = 0
+        wakeHourMiss = Int(enterSleepHourIn.text!) ?? 0
+        sleepHourMiss = Int(enterWakeHourIn.text!) ?? 0
+        var s: Int = sleepHourMiss
+        let w: Int = wakeHourMiss
+        
+        if (Int(enterWakeMinIn.text!) ?? 0) >= 30 {
+            wakeHourMiss += 1
+        }
+        
+        if (Int(enterSleepMinIn.text!) ?? 0) >= 30 {
+            sleepHourMiss += 1
+        }
+        
+                 
+        //if s >= 0  && s <= 12 && sleepTimesWeek.count != 0 {
+         //   s += 24
+        //}
+   
+        
+        wakeTimesWeek.append(w)
+        sleepTimesWeek.append(s)
+        
+        aveWakeWeek = Int(ceil(Double((wakeTimesWeek.reduce(0, +))/(wakeTimesWeek.count))))
+        aveSleepWeek = Int(ceil(Double((sleepTimesWeek.reduce(0, +))/(sleepTimesWeek.count))))
+        
+        if aveSleepWeek == 24 {
+            aveSleepWeek = 00
+        }
+        
+        //preferredWakeWeekOut.text = "Based on recorded data:    " + String(aveWakeWeek) + " : 00"
+       // preferredSleepWeekOut.text = "Based on recorded data:    " + String(aveSleepWeek) + " : 00"
+        
+        
+        
+        missingSleep = wakeHourMiss - sleepHourMiss
+        
+        if missingSleep < 0 {
+            missingSleep += 24
+        }
+        
+        if missingSleep >= 9 {
+            missingSleep = 0
+        }
+        else {
+            missingSleep = 9 - missingSleep
+            if missingSleep == 1 {
+                sleepHourMiss -= 1
+            }
+            else {
+                wakeHourMiss = wakeHourMiss + Int(floor(Double(missingSleep)/2))
+                sleepHourMiss = sleepHourMiss - Int(ceil(Double(missingSleep)/2))
+            }
+        }
+        
+        missingSleepOut.text = String(missingSleep) + "    Hours"
+        
+        if sleepHourMiss < 0 {
+            sleepHourMiss += 24
+        }
+        
+        recommendWakeOut.text = String(wakeHourMiss) + " : 00"
+        recommendSleepOut.text = String(sleepHourMiss) + " : 00"
+        
+        //testing preferred times to match the user input
+        preferredWakeWeekOut.text = "Based on recorded data:    " + String(wakeHourMiss) + " : 00"
+        preferredSleepWeekOut.text = "Based on recorded data:    " + String(sleepHourMiss) + " : 00"
+        
+        
+        //testing preferred times to add to the database for the user and computing the average of it
+        /*
+        if wakeTimesWeek.count == 7 && sleepTimesWeek.count == 7 {
+            aveWakeWeek = (wakeTimesWeek.reduce(0, +))/7
+            aveSleepWeek = (sleepTimesWeek.reduce(0, +))/7
+            preferredWakeWeekOut.text = "Based on recorded data:    " + String(aveWakeWeek) + " : 00"
+            preferredSleepWeekOut.text = "Based on recorded data:    " + String(aveSleepWeek) + " : 00"
+            wakeTimesWeek = []
+            sleepTimesWeek = []
+        }
+        else {
+            aveWakeWeek = Int(ceil(Double((wakeTimesWeek.reduce(0, +))/(wakeTimesWeek.count))))
+            aveSleepWeek = Int(floor(Double((sleepTimesWeek.reduce(0, +))/(sleepTimesWeek.count))))
+            preferredWakeWeekOut.text = "Based on recorded data:    " + String(aveWakeWeek) + " : 00"
+            preferredSleepWeekOut.text = "Based on recorded data:    " + String(aveSleepWeek) + " : 00"
+        }
+         */
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func viewDidLayoutSubviews() {
+        Utilities.styleSubHeaderLabel(topQ)
+        Utilities.styleSubHeaderLabel(missingSleepLable)
+        Utilities.styleSubHeaderLabel(missingSleepOut)
+        Utilities.styleSubHeaderLabel(recommendSleepLable)
+        Utilities.styleSubHeaderLabel(recommendSleepOut)
+        Utilities.styleSubHeaderLabel(recommendWakeLable)
+        Utilities.styleSubHeaderLabel(recommendWakeOut)
+        Utilities.styleSubHeaderLabel(enterWakeLable)
+        Utilities.styleSubHeaderLabel(enterWakeDot)
+        Utilities.styleSubHeaderLabel(enterSleepLable)
+        Utilities.styleSubHeaderLabel(enterSleepDot)
+        Utilities.styleSubHeaderLabel(preferredWakeWeek)
+        Utilities.styleSubHeaderLabel(preferredWakeWeekOut)
+        Utilities.styleSubHeaderLabel(preferredSleepWeek)
+        Utilities.styleSubHeaderLabel(preferredSleepWeekOut)
     }
-    */
 
+    
 }
