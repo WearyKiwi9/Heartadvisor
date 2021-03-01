@@ -234,7 +234,7 @@ extension MentalHealthViewController: UICollectionViewDelegate, UICollectionView
         let vc = storyboard!.instantiateViewController(withIdentifier: "player") as! PlayerViewController
         
         if(collectionView == recommendedView) {
-            
+            vc.name = recommendedImgs[indexPath.row];
         }
         else if (collectionView == relaxView) {
             vc.name = relaxImgs[indexPath.row];
