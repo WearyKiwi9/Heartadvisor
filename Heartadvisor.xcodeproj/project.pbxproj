@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08B0E28625EC837D00FFAAF0 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0E28525EC837D00FFAAF0 /* ExerciseViewController.swift */; };
+		08B0E28B25EC83AB00FFAAF0 /* ExerciseSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0E28A25EC83AB00FFAAF0 /* ExerciseSettingsViewController.swift */; };
+		08B0E29025EC83C400FFAAF0 /* ExerciseProgressSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B0E28F25EC83C400FFAAF0 /* ExerciseProgressSettingsViewController.swift */; };
 		407C04782CAE62931EFEE192 /* Pods_Heartadvisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81BA7A6A10E868342971875 /* Pods_Heartadvisor.framework */; };
 		E46DC62825DFA01F0073E65F /* MentalSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46DC62725DFA01F0073E65F /* MentalSettingsViewController.swift */; };
 		E46DC62D25DFA0490073E65F /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46DC62C25DFA0490073E65F /* PlayerViewController.swift */; };
@@ -23,7 +26,6 @@
 		E4C60A4125C098CB00B89AE5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C60A4025C098CB00B89AE5 /* HomeViewController.swift */; };
 		E4C60A4625C098DC00B89AE5 /* MentalHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C60A4525C098DC00B89AE5 /* MentalHealthViewController.swift */; };
 		E4C60A4B25C098E600B89AE5 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C60A4A25C098E600B89AE5 /* SleepViewController.swift */; };
-		E4C60A5025C098F500B89AE5 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C60A4F25C098F500B89AE5 /* ExerciseViewController.swift */; };
 		E4C60A5525C098FE00B89AE5 /* DietViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C60A5425C098FE00B89AE5 /* DietViewController.swift */; };
 		E4C60A5A25C09E2A00B89AE5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C60A5925C09E2A00B89AE5 /* Extensions.swift */; };
 		E4C60A6225C09F8800B89AE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C60A6125C09F8800B89AE5 /* Constants.swift */; };
@@ -54,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08B0E28525EC837D00FFAAF0 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		08B0E28A25EC83AB00FFAAF0 /* ExerciseSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSettingsViewController.swift; sourceTree = "<group>"; };
+		08B0E28F25EC83C400FFAAF0 /* ExerciseProgressSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProgressSettingsViewController.swift; sourceTree = "<group>"; };
 		6B34C10496B5498021D37E78 /* Pods-Heartadvisor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartadvisor.debug.xcconfig"; path = "Target Support Files/Pods-Heartadvisor/Pods-Heartadvisor.debug.xcconfig"; sourceTree = "<group>"; };
 		70BA94F7D8F6984D433DB39A /* Pods-Heartadvisor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Heartadvisor.release.xcconfig"; path = "Target Support Files/Pods-Heartadvisor/Pods-Heartadvisor.release.xcconfig"; sourceTree = "<group>"; };
 		C81BA7A6A10E868342971875 /* Pods_Heartadvisor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Heartadvisor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +83,6 @@
 		E4C60A4025C098CB00B89AE5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E4C60A4525C098DC00B89AE5 /* MentalHealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalHealthViewController.swift; sourceTree = "<group>"; };
 		E4C60A4A25C098E600B89AE5 /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
-		E4C60A4F25C098F500B89AE5 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		E4C60A5425C098FE00B89AE5 /* DietViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietViewController.swift; sourceTree = "<group>"; };
 		E4C60A5925C09E2A00B89AE5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E4C60A6125C09F8800B89AE5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -117,6 +121,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08B0E28425EC836B00FFAAF0 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				08B0E28525EC837D00FFAAF0 /* ExerciseViewController.swift */,
+				08B0E28A25EC83AB00FFAAF0 /* ExerciseSettingsViewController.swift */,
+				08B0E28F25EC83C400FFAAF0 /* ExerciseProgressSettingsViewController.swift */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
 		0DF00D8CA96077A9A4620D08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,11 +227,11 @@
 		E4C60A3A25C0989E00B89AE5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				08B0E28425EC836B00FFAAF0 /* Exercise */,
 				E49E7CC525C6205E0040DB75 /* Login */,
 				E4B1F28125D4BE0C00FC237C /* Mental Health */,
 				E4C60A4025C098CB00B89AE5 /* HomeViewController.swift */,
 				E4C60A4A25C098E600B89AE5 /* SleepViewController.swift */,
-				E4C60A4F25C098F500B89AE5 /* ExerciseViewController.swift */,
 				E4C60A5425C098FE00B89AE5 /* DietViewController.swift */,
 				E46DC62C25DFA0490073E65F /* PlayerViewController.swift */,
 				E4CE680A25E7198700CEF81A /* SideMenuViewController.swift */,
@@ -431,15 +445,17 @@
 				E46DC62825DFA01F0073E65F /* MentalSettingsViewController.swift in Sources */,
 				E4C60A8625C0D2F700B89AE5 /* Utilities.swift in Sources */,
 				E4C60A4B25C098E600B89AE5 /* SleepViewController.swift in Sources */,
-				E4C60A5025C098F500B89AE5 /* ExerciseViewController.swift in Sources */,
 				E4C60A3C25C098BA00B89AE5 /* LoginViewController.swift in Sources */,
 				E4C60A6225C09F8800B89AE5 /* Constants.swift in Sources */,
 				E4C609FD25C0958400B89AE5 /* AppDelegate.swift in Sources */,
 				E49E7CED25C62CC70040DB75 /* ForgotPasswordViewController.swift in Sources */,
 				E4C60A4625C098DC00B89AE5 /* MentalHealthViewController.swift in Sources */,
 				E4B0D73C25D0A8270081B905 /* TabBarViewController.swift in Sources */,
+				08B0E29025EC83C400FFAAF0 /* ExerciseProgressSettingsViewController.swift in Sources */,
 				E4C609FF25C0958400B89AE5 /* SceneDelegate.swift in Sources */,
 				E4C60A4125C098CB00B89AE5 /* HomeViewController.swift in Sources */,
+				08B0E28B25EC83AB00FFAAF0 /* ExerciseSettingsViewController.swift in Sources */,
+				08B0E28625EC837D00FFAAF0 /* ExerciseViewController.swift in Sources */,
 				E46DC62D25DFA0490073E65F /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

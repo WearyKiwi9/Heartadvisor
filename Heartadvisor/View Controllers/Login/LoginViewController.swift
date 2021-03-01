@@ -137,7 +137,14 @@ class LoginViewController: UIViewController {
                     "first_name":self.firstNameField.text!,
                     "last_name":self.lastNameField.text!,
                     "uid":authResult!.user.uid,
-                    "email":self.emailField.text!
+                    "email":self.emailField.text!,
+                    "currentExerciseProgress": "0",
+                    "weeklyExerciseGoal": "300",
+                    "hasEquipment": true,
+                    "upperFreq": 0.25,
+                    "lowerFreq": 0.25,
+                    "coreFreq": 0.25,
+                    "newFreq": 0.25
                 ], merge: true){ (error) in
                     self.showError(message: error?.localizedDescription ?? "The system ran into an unexpected error. Please try again later.")
                     print("here2")
