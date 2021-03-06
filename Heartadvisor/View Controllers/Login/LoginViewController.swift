@@ -65,6 +65,8 @@ class LoginViewController: UIViewController {
         Utilities.styleParagraphLabel(paragraph1)
         
         Utilities.styleFilledButton(signBtn)
+        
+        view.layoutIfNeeded()
     }
     
     @IBAction func onSwitch(_ sender: Any) {
