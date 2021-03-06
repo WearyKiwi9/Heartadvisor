@@ -1,6 +1,7 @@
 import UIKit
 
 class SleepViewController: UIViewController {
+    
 
     @IBOutlet weak var topQ: UILabel!
     @IBOutlet weak var missingSleepLable: UILabel!
@@ -24,6 +25,9 @@ class SleepViewController: UIViewController {
     var wakeTimesWeek: [Int] = []
     var sleepTimesWeek: [Int] = []
  
+    
+    @IBOutlet weak var OverSleepLable: UILabel!
+    @IBOutlet weak var OverSleepOut: UILabel!
     
     
      @objc func enterWakeHourInDidChange(_ textField: UITextField) {
@@ -50,9 +54,25 @@ class SleepViewController: UIViewController {
         }
      }
      
+    
+    
+    @IBOutlet weak var my_image: UIImageView!
+    
+    
+    //collectionView
+    @IBOutlet weak var sliderCollectionView: UICollectionView!
+    
+    @IBOutlet weak var pageView: UIPageControl!
+    
+    //array of images for collectionView
+    var imgArr = [UIImage(named: "clock zz"),
+                  UIImage(named: "xs")]
+    
      override func viewDidLoad() {
          super.viewDidLoad()
 
+         my_image.image = UIImage(named: "clock zz")
+        
          navigationBarSetup()
          
          enterWakeHourIn.addTarget(self, action: #selector(SleepViewController.enterWakeHourInDidChange(_:)), for: .editingChanged)
@@ -71,6 +91,7 @@ class SleepViewController: UIViewController {
         //calculating missing hours of last night sleep / calculating recommended wake up and sleep time
         //calculating preferred wake up and sleep time based on the collected user data
         var missingSleep: Int = 0
+        var overSleep: Int = 0
         var wakeHourMiss: Int = 0
         var sleepHourMiss: Int = 0
         var aveWakeWeek: Int = 0
@@ -115,10 +136,39 @@ class SleepViewController: UIViewController {
             missingSleep += 24
         }
         
-        if missingSleep >= 9 {
+        if missingSleep == 9 {
             missingSleep = 0
+            overSleep = 0
+        }
+        else if missingSleep > 9 {
+            overSleep = missingSleep - 9
+            missingSleep = 0
+            if overSleep == 1 {
+                sleepHourMiss += 1
+                if sleepHourMiss == 24 {
+                    sleepHourMiss = 0
+                }
+            }
+            else {
+                wakeHourMiss = wakeHourMiss - Int(floor(Double(overSleep)/2))
+                sleepHourMiss = sleepHourMiss + Int(ceil(Double(overSleep)/2))
+                if wakeHourMiss == 24 {
+                    wakeHourMiss = 0
+                }
+                if sleepHourMiss == 24 {
+                    sleepHourMiss = 0
+                }
+                if 3 <= sleepHourMiss && sleepHourMiss > 0 {
+                    sleepHourMiss -= 2
+                    wakeHourMiss -= 2
+                    if sleepHourMiss < 0 {
+                        sleepHourMiss += 24
+                    }
+                }
+            }
         }
         else {
+            overSleep = 0
             missingSleep = 9 - missingSleep
             if missingSleep == 1 {
                 sleepHourMiss -= 1
@@ -131,6 +181,8 @@ class SleepViewController: UIViewController {
         
         missingSleepOut.text = String(missingSleep) + "    Hours"
         
+        OverSleepOut.text = String(overSleep) + "    Hours"
+        
         if sleepHourMiss < 0 {
             sleepHourMiss += 24
         }
@@ -139,27 +191,25 @@ class SleepViewController: UIViewController {
         recommendSleepOut.text = String(sleepHourMiss) + " : 00"
         
         //testing preferred times to match the user input
-        preferredWakeWeekOut.text = "Based on recorded data:    " + String(wakeHourMiss) + " : 00"
-        preferredSleepWeekOut.text = "Based on recorded data:    " + String(sleepHourMiss) + " : 00"
+        //preferredWakeWeekOut.text = "Based on recorded data:    " + String(wakeHourMiss) + " : 00"
+        //preferredSleepWeekOut.text = "Based on recorded data:    " + String(sleepHourMiss) + " : 00"
         
         
         //testing preferred times to add to the database for the user and computing the average of it
-        /*
         if wakeTimesWeek.count == 7 && sleepTimesWeek.count == 7 {
             aveWakeWeek = (wakeTimesWeek.reduce(0, +))/7
             aveSleepWeek = (sleepTimesWeek.reduce(0, +))/7
-            preferredWakeWeekOut.text = "Based on recorded data:    " + String(aveWakeWeek) + " : 00"
-            preferredSleepWeekOut.text = "Based on recorded data:    " + String(aveSleepWeek) + " : 00"
+            //preferredWakeWeekOut.text = "Based on recorded data:    " + String(aveWakeWeek) + " : 00"
+            //preferredSleepWeekOut.text = "Based on recorded data:    " + String(aveSleepWeek) + " : 00"
             wakeTimesWeek = []
             sleepTimesWeek = []
         }
         else {
             aveWakeWeek = Int(ceil(Double((wakeTimesWeek.reduce(0, +))/(wakeTimesWeek.count))))
             aveSleepWeek = Int(floor(Double((sleepTimesWeek.reduce(0, +))/(sleepTimesWeek.count))))
-            preferredWakeWeekOut.text = "Based on recorded data:    " + String(aveWakeWeek) + " : 00"
-            preferredSleepWeekOut.text = "Based on recorded data:    " + String(aveSleepWeek) + " : 00"
+            //preferredWakeWeekOut.text = "Based on recorded data:    " + String(aveWakeWeek) + " : 00"
+            //preferredSleepWeekOut.text = "Based on recorded data:    " + String(aveSleepWeek) + " : 00"
         }
-         */
         
     }
     
@@ -176,11 +226,41 @@ class SleepViewController: UIViewController {
         Utilities.styleSubHeaderLabel(enterWakeDot)
         Utilities.styleSubHeaderLabel(enterSleepLable)
         Utilities.styleSubHeaderLabel(enterSleepDot)
-        Utilities.styleSubHeaderLabel(preferredWakeWeek)
-        Utilities.styleSubHeaderLabel(preferredWakeWeekOut)
-        Utilities.styleSubHeaderLabel(preferredSleepWeek)
-        Utilities.styleSubHeaderLabel(preferredSleepWeekOut)
+        //Utilities.styleSubHeaderLabel(preferredWakeWeek)
+        //Utilities.styleSubHeaderLabel(preferredWakeWeekOut)
+        //Utilities.styleSubHeaderLabel(preferredSleepWeek)
+        //Utilities.styleSubHeaderLabel(preferredSleepWeekOut)
+        Utilities.styleSubHeaderLabel(OverSleepLable)
+        Utilities.styleSubHeaderLabel(OverSleepOut)
     }
 
+    
+}
+
+
+extension SleepViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imgArr.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        if let vc = cell.viewWithTag(111) as? UIImageView {
+            vc.image = imgArr[indexPath.row]
+        } else if let ab = cell.viewWithTag(222) as? UIPageControl {
+            ab.currentPage = indexPath.row
+        }
+        return cell
+    }
+}
+
+
+extension SleepViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
     
 }
